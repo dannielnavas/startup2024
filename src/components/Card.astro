@@ -1,20 +1,39 @@
-<article class="w-[329px] h-[456px] bg-white border rounded-[32px] ">
+---
+interface CardProps {
+    image: string;
+    title: string;
+    items: string[];
+}
+const {image, title,items} = Astro.props as CardProps;
+---
+<article class="w-[329px] h-auto bg-white border rounded-[32px] ">
     <header>
-        <img src="./card-1.png" alt="card 1" class="w-screen">
+        <img src={image} alt="card 1" class="w-screen">
     </header>
     <main class="p-4">
-        <p>
-            <b>Demográficos:</b>
-            <span>Edad: 18-35 años</span>
-            <span>Género: Mujeres / Hombres</span>
-            Ubicación: Principalmente en áreas urbanas con acceso a internet y redes sociales
-        </p>
+        <b class="text-[14px]">{title}</b>
+        {
+            items?.map((item) => (
+                item === ' ' ? <br /> :
+                <p class="text-[14px]">{item}</p>
+            ))
+        }
     </main>
 </article>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     article {
         box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    }
+
+
+    p, b {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        line-height: 16.94px;
+        font-style: normal;
+
     }
 </style>

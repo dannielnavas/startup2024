@@ -1,13 +1,47 @@
 ---
 import Card from "./Card.astro";
 import TitleGroup from "./TitleGroup.astro";
+
+const cards = [
+    {
+        id: 1,
+        image: "./card-1.png",
+        title: "Demográficos:",
+        items: ['Edad: 18-35 años', 'Género: Mujeres / Hombres', 'Ubicación: Principalmente en áreas urbanas', 'con acceso a internet y redes sociales']
+    },
+    {
+        id: 2,
+        image: "./card-2.png",
+        title: "Psicográficos:",
+        items: ['Intereses: Organización, diseño,', 'sostenibilidad, productos artesanales', ' ', 'Estilo de vida: Personas creativas,', 'estudiantes, profesionales jóvenes, amantes', 'de la papelería y la organización']
+    },
+    {
+        id: 3,
+        image: "./card-3.png",
+        title: "Conductuales:",
+        items: ['Comportamiento de compra: Compran', 'productos de papelería de alta calidad,', 'buscan exclusividad y personalización', ' ', 'Lealtad a la marca: Alta, debido a la calidad', 'y el diseño único de los productos']
+    }
+];
 ---
 
 <section class="flex flex-col justify-center items-center mt-40 mr-auto ml-auto">
     <TitleGroup />
-    <section class="mt-10 h-auto flex flex-row gap-4">
-        <Card />
-        <Card />
-        <Card />
+    <section class="mt-10 h-auto flex flex-row gap-[10px]">
+        {
+            cards.map((card) => (
+                <Card key={card.id} image={card.image} title={card.title} items={card.items} />
+            ))
+        }
     </section>
 </section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+p, b{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+</style>
