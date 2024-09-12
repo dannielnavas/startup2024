@@ -23,10 +23,6 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
-    devDependencies:
-      sass:
-        specifier: ^1.78.0
-        version: 1.78.0
 
 packages:
 
@@ -3261,7 +3257,8 @@ snapshots:
 
   http-cache-semantics@4.1.1: {}
 
-  immutable@4.3.7: {}
+  immutable@4.3.7:
+    optional: true
 
   import-meta-resolve@4.1.0: {}
 
@@ -4031,6 +4028,7 @@ snapshots:
       chokidar: 3.6.0
       immutable: 4.3.7
       source-map-js: 1.2.0
+    optional: true
 
   section-matter@1.0.0:
     dependencies:
