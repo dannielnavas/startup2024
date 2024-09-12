@@ -1,0 +1,67 @@
+---
+import IconFace from "./IconFace.astro";
+import IconShop from "./IconShop.astro";
+import IconStart from "./IconStart.astro";
+import Logo from "./Logo.astro";
+
+
+interface Menu {
+  name: string;
+  url: string;
+}
+
+const menu: Menu[] = [
+  {
+    name: "Quienes somos",
+    url: "/",
+  },
+  {
+    name: "Proyección",
+    url: "/",
+  },
+  {
+    name: "Líneas de negocio",
+    url: "/",
+  },
+  {
+    name: "Grupo objetivo",
+    url: "/",
+  }
+];
+---
+
+<nav
+  class="flex flex-col justify-center items-center bg-white text-white p-1 container mx-auto my-auto w-full"
+>
+  <header class="w-full flex flex-row justify-between items-center">
+    <Logo />
+
+    <div class="flex flex-row gap-2">
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+            <IconShop />
+        </a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+            <IconFace />
+        </a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+            <IconStart />
+        </a>
+    </div>
+  </header>
+  <menu class="flex justify-between items-center gap-5 max-sm:hidden mt-8">
+    {
+      menu.map(({ name, url }) => (
+        <li class="list-none mr-1 ml-1">
+          <a
+            href={url}
+            class="no-underline text-[#E46B81]"
+            rel="noopener noreferrer"
+            aria-label={name}
+          >
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </menu>
+</nav>
