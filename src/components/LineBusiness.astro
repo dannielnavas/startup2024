@@ -1,0 +1,49 @@
+---
+import IconBook from "./IconBook.astro";
+import ImageBook from "./ImageBook.astro";
+---
+
+<section class="w-[632] h-auto mt-40 mr-auto ml-auto flex flex-row justify-center items-center">
+    <div class="flex flex-col">
+        <article class="flex flex-row justify-between items-center w-[234px] gap-4">
+            <h4 class="text-[128px] font-bold">3</h4>
+            <h5 class="text-[32px] ">líneas de negocio</h5>
+        </article>
+        <article>
+            <div class="flex flex-row gap-8 mb-8">
+                <IconBook />
+                <p>Cuadernos artesanales</p>
+            </div>
+
+            <div class="flex flex-row gap-8 mb-8">
+                <IconBook />
+                <p>Planners y organizadores</p>
+            </div>
+
+            <div class="flex flex-row gap-8 mb-8">
+                <IconBook />
+                <p>Merchandising personalizado</p>
+            </div>
+        </article>
+    </div>
+    <ImageBook />
+</section>
+
+<style lang="css" scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    h4, h5 {
+        font-family: "Fredoka", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+    }
+
+    h5 {
+        line-height: 38.72px;
+    }
+
+</style>
