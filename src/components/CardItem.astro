@@ -1,0 +1,35 @@
+---
+import CartIcon from "./CartIcon.astro";
+
+export interface CartProps {
+    title: string;
+    description: string;
+    image: string;
+};
+
+const { title, description, image } = Astro.props as CartProps;
+
+---
+
+<article class="flex flex-col w-[261px] h-auto">
+    <header class="w-auto h-auto flex flex-row justify-center">
+        <img src={image} alt={title} class="w-auto h-auto" />
+    </header>
+    <section class="mt-2 min-h-[153px] max-h-[357px]">
+        <h2 class="text-[#E46B81] text-[14px]">{title}</h2>
+        <p class="text-[14px] text-balance ">{description}</p>
+    </section>
+    <footer class="flex flex-row justify-end mt-4">
+        <CartIcon />
+    </footer>
+</article>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+h2, p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>

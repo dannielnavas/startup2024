@@ -1,0 +1,38 @@
+---
+import CardItem, { type CartProps } from "./CardItem.astro";
+
+const itemsStore: CartProps[] = [
+    {
+        title: "MOODS",
+        description: "elegir el color de las hojas entre blanco y natural que este con puntos o con la edición disponible a los nuevos lanzamientos.Esta libreta permite realizar una introspección de los sucesos de cada día.",
+        image: "./book-1.png"
+    },
+    {
+        title: "Línea Clásica",
+        description: "Agenda clásica para poner todo tipo de información que sea importante para organizar cada día. Puedes elegir el color de las hojas entre blanco y natural",
+        image: "./book-2.png"
+    },
+    {
+        title: "Planners",
+        description: "Esta línea de agendas es especial para poder planear y organizar todo tipo de actividad que se vaya a ejecutar, perfecta para la oficina, para estudiantes y cualquier persona que quiera mantener todo de manera más ordenada Su diseño es con frases que nos definen y nos hacen más divertido todo, como el *Desembolatador Semanal*",
+        image: "./book-3.png"
+    },
+    {
+        title: "Línea XS",
+        description: "Agenda pequeña para poder llevar toda la información, se modifica de acuerdo a la elección del cliente, puede convertirse en un Planner.",
+        image: "./book-4.png"
+    },
+    {
+        title: "5 Materias",
+        description: "Esta línea es de cuadernos 5 materias argollados, cuenta con diseños divertidos.",
+        image: "./book-5.png"
+    },
+
+];
+---
+
+<section class="w-full h-auto flex flex-row gap-8  mt-40">
+    {itemsStore.map((item, index) => (
+        <CardItem {...item} key={index} />
+    ))}
+</section>
