@@ -11,7 +11,7 @@ import Release from "@/components/Release.astro";
 import Store from "@/components/Store.astro";
 import StrokText from "@/components/StrokText.astro";
 import Layout from "@/layout/Layout.astro";
-
+import { Icon } from 'astro-icon/components';
 
 
 ---
@@ -32,4 +32,20 @@ import Layout from "@/layout/Layout.astro";
   <Preview />
   <Release />
   <Footer />
+  <div class="w-full flex flex-row justify-end fixed bottom-4 right-24">
+    <a href="#home">
+    <div class="w-16 h-16 rounded-full flex flex-row justify-center items-center bg-cyan-600 animate-slide-out-top">
+      <Icon name="mdi:arrow-up-thin-circle-outline" />
+    </div>
+    </a>
+  </div>
 </Layout>
+
+
+
+<style>
+[data-icon] {
+    font-size: 2rem;
+    color: white;
+}
+</style>
