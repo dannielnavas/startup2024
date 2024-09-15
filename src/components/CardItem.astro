@@ -11,7 +11,7 @@ const { title, description, image } = Astro.props as CartProps;
 
 ---
 
-<article class="flex flex-col w-[261px] h-auto">
+<article class="flex flex-col w-[261px] h-auto hover:border hover:border-gray-600 hover:p-2 hover:shadow-black">
     <header class="w-auto h-auto flex flex-row justify-center">
         <img src={image} alt={title} class="w-auto h-auto" />
     </header>
